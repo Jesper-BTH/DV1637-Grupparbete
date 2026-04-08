@@ -39,13 +39,13 @@ public class PlayercController : MonoBehaviour
 
         // Read input
         Vector2 input = moveAction.action.ReadValue<Vector2>();
-        Vector3 move = new Vector3(input.x, 0, input.y);
+        Vector3 move = transform.right * input.x + transform.forward * input.y;
         move = Vector3.ClampMagnitude(move, 1f);
 
         //if (move != Vector3.zero)
         //    transform.forward = move;
 
-        //Jump using WasPressedThisFrame(
+        //Jump using WasPressedThisFrame()
         if (groundedPlayer && jumpAction.action.WasPressedThisFrame())
         {
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravityValue);
