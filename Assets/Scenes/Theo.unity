@@ -307,6 +307,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1821356646381927800, guid: 7e43615882aa9504ab95b6ab2d1f6c2f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b51faaca2ecdb94a98ef86afb39a99d, type: 2}
+    - target: {fileID: 5257068447412160267, guid: 7e43615882aa9504ab95b6ab2d1f6c2f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 64e21a60c12034a4a853bfe9e9ed34d1, type: 2}
     - target: {fileID: 6463089179499106617, guid: 7e43615882aa9504ab95b6ab2d1f6c2f, type: 3}
       propertyPath: m_Name
       value: PlateRoot (1)
@@ -472,7 +480,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6d3b387cd2380e64ba5b67b11757bed4, type: 2}
+  - {fileID: 2100000, guid: 64e21a60c12034a4a853bfe9e9ed34d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -584,7 +592,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a3cce754ddd8d2e4096399617da03a52, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -747,7 +755,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6d3b387cd2380e64ba5b67b11757bed4, type: 2}
+  - {fileID: 2100000, guid: 64e21a60c12034a4a853bfe9e9ed34d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -802,6 +810,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1821356646381927800, guid: 7e43615882aa9504ab95b6ab2d1f6c2f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b51faaca2ecdb94a98ef86afb39a99d, type: 2}
+    - target: {fileID: 5257068447412160267, guid: 7e43615882aa9504ab95b6ab2d1f6c2f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 64e21a60c12034a4a853bfe9e9ed34d1, type: 2}
     - target: {fileID: 6463089179499106617, guid: 7e43615882aa9504ab95b6ab2d1f6c2f, type: 3}
       propertyPath: m_Name
       value: PlateRoot
@@ -859,6 +875,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 520861989907659071, guid: efaed08ec61457c4590cd5decf75b686, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b51faaca2ecdb94a98ef86afb39a99d, type: 2}
     - target: {fileID: 3256036611017571216, guid: efaed08ec61457c4590cd5decf75b686, type: 3}
       propertyPath: plates.Array.size
       value: 2
