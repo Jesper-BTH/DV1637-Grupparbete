@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2298380469241777200}
   - component: {fileID: 531732775212800310}
   - component: {fileID: 8739885752279787356}
+  - component: {fileID: 3308758432074142338}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -74,6 +75,19 @@ MonoBehaviour:
   characterController: {fileID: 531732775212800310}
   moveAction: {fileID: -1680190386980627800, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   jumpAction: {fileID: -2099379676528639254, guid: 289c1b55c9541489481df5cc06664110, type: 3}
+--- !u!114 &3308758432074142338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639946295995883497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d886fa6e7c3d6948a637b0d88087ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Push
+  pushStrength: 2
 --- !u!1 &2706093848456242154
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ TagManager:
   - Weak
   - Shovel
   - Key
+  - Block
   layers:
   - Default
   - TransparentFX
