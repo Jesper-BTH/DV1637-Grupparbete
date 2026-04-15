@@ -38,7 +38,7 @@ public class PlayerInteraction : MonoBehaviour
             if (hit.collider.CompareTag("Weak"))
             {
                 hit.collider.GetComponentInParent<Coffin>().WeakPointHit(hit.collider);
-            }
+            }//Checks if ray hits a weakpoint and does the weakpscript - Mattis
 
             Debug.Log("Ray hit: " + hit.collider.name);
             Debug.Log("Component: " + hit.collider.GetComponent<IInteractable>());
