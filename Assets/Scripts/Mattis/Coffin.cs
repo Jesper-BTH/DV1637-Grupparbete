@@ -21,7 +21,7 @@ public class Coffin : MonoBehaviour
     {
         PointsHit++;
         piece.transform.tag = "Broken";
-        piece.transform.Translate(0,0.00001f,0);
+        piece.transform.Translate(0,0.02f,0);//Feedback on weakhit
         Debug.Log("Pointhit: " +  PointsHit);
         
         if(PointsHit >= 3)
@@ -31,9 +31,10 @@ public class Coffin : MonoBehaviour
             {
                 Debug.Log(gameObject.transform.GetChild(i));
                 gameObject.transform.GetChild(i).AddComponent<Rigidbody>();
-                //gameObject.transform.GetChild(i).AddComponent<SphereCollider>();
+                gameObject.transform.GetChild(i).GetComponent<MeshCollider>().enabled = false;
+                gameObject.transform.GetChild(i).AddComponent<BoxCollider>();
 
-                gameObject.transform.GetChild(i).GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-2, 2), 2,Random.Range(-2, 2)), ForceMode.Impulse);
+                gameObject.transform.GetChild(i).GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-0.5f, 0.5f), 0.5f, Random.Range(-0.5f, 0.5f)), ForceMode.Impulse);
             }//Scatter pieces
             gameObject.transform.GetComponent<BoxCollider>().enabled = false;
         }//breaks the object into pieces when 3 weakpoints have been hit.
