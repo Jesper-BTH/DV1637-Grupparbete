@@ -35,6 +35,11 @@ public class PlayerInteraction : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, range))
         {
+            if (hit.collider.CompareTag("Weak"))
+            {
+                hit.collider.GetComponentInParent<Coffin>().WeakPointHit(hit.collider);
+            }
+
             Debug.Log("Ray hit: " + hit.collider.name);
             Debug.Log("Component: " + hit.collider.GetComponent<IInteractable>());
 

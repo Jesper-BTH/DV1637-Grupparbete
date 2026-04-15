@@ -17,19 +17,21 @@ public class Coffin : MonoBehaviour
         
     }
 
-    public void WeakPointHit(GameObject piece)
+    public void WeakPointHit(Collider piece)
     {
-        PointsHit =+ 1;
+        PointsHit++;
         piece.transform.tag = "Broken";
         piece.transform.Translate(0,0.00001f,0);
+        Debug.Log("Pointhit: " +  PointsHit);
         
         if(PointsHit >= 3)
         {
             int kids = gameObject.transform.childCount;
             for (int i = 0; i < kids; i++)
             {
+                Debug.Log(gameObject.transform.GetChild(i));
                 gameObject.transform.GetChild(i).AddComponent<Rigidbody>();
-                gameObject.transform.GetChild(i).AddComponent<SphereCollider>();
+                //gameObject.transform.GetChild(i).AddComponent<SphereCollider>();
 
                 gameObject.transform.GetChild(i).GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-2, 2), 2,Random.Range(-2, 2)), ForceMode.Impulse);
             }//Scatter pieces
