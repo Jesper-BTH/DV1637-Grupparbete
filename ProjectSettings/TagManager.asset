@@ -9,6 +9,7 @@ TagManager:
   - Shovel
   - Key
   - Block
+  - ladder
   layers:
   - Default
   - TransparentFX

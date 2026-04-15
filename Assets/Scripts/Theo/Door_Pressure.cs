@@ -6,6 +6,8 @@ public class Door_Pressure : MonoBehaviour
     public Transform door;
     public Vector3 openOffset = new Vector3(0, 5, 0);
     public float speed = 2f;
+    private float openDelay = 2f;
+    private float timer = 0f;
 
     private Vector3 closedPos;
     private Vector3 openPos;
@@ -19,10 +21,16 @@ public class Door_Pressure : MonoBehaviour
     {
         if(AreAllPlatesPressed())
         {
-            OpenDoor();
+            timer += Time.deltaTime;
+
+            if (timer >= openDelay)
+            {
+                OpenDoor();
+            }
         }
         else
         {
+            timer = 0f; // reset if any plate is released
             CloseDoor();
         }
     }

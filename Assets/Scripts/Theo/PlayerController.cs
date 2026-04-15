@@ -7,10 +7,13 @@ public class PlayercController : MonoBehaviour
     private float playerSpeed = 5.0f;
     private float jumpHeight = 1.5f;
     private float gravityValue = -9.81f;
+    private float climbingSpeed = 2f;
 
     public CharacterController characterController;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
+    public bool isClimbing = false;
+
 
     [Header("Input Actions")]
     public InputActionReference moveAction;
@@ -25,6 +28,23 @@ public class PlayercController : MonoBehaviour
     {
         moveAction?.action.Disable();
         jumpAction?.action.Disable();
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("ladder"))
+        {
+            isClimbing = true;
+            playerVelocity.y = 0f; // reset falling
+
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("ladder"))
+        {
+            isClimbing = false;
+        }
     }
 
     private void Update()
@@ -42,11 +62,24 @@ public class PlayercController : MonoBehaviour
         Vector3 move = transform.right * input.x + transform.forward * input.y;
         move = Vector3.ClampMagnitude(move, 1f);
 
-        //if (move != Vector3.zero)
-        //    transform.forward = move;
+        if(isClimbing == true)
+        {
+            playerVelocity.y = input.y * climbingSpeed;
+
+            Vector3 climbMove = Vector3.up * playerVelocity.y;
+
+            characterController.Move(climbMove * Time.deltaTime);
+
+            if (groundedPlayer && input.y < 0)
+            {
+                isClimbing = false;
+            }
+
+            return;
+        }
 
         //Jump using WasPressedThisFrame()
-        if (groundedPlayer && jumpAction.action.WasPressedThisFrame())
+        if (groundedPlayer && jumpAction.action.WasPressedThisFrame() && isClimbing == false)
         {
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravityValue);
         }
