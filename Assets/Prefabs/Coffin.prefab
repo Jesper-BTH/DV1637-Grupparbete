@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 361ff381b872d5b40b2e4197aa59af57, type: 2}
+    - target: {fileID: -2851352185720148319, guid: 7d91ce5a284673c48b10792b008bc9ff, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
     - target: {fileID: -1979133295926494160, guid: 7d91ce5a284673c48b10792b008bc9ff, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -84,13 +88,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coffin
       objectReference: {fileID: 0}
+    - target: {fileID: 2523383426424945014, guid: 7d91ce5a284673c48b10792b008bc9ff, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
     - target: {fileID: 2836070658898997892, guid: 7d91ce5a284673c48b10792b008bc9ff, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5a4aa817b3355da459f3f199fe0a25be, type: 2}
     - target: {fileID: 2863037250823238406, guid: 7d91ce5a284673c48b10792b008bc9ff, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Block
       objectReference: {fileID: 0}
     - target: {fileID: 4460948473830392203, guid: 7d91ce5a284673c48b10792b008bc9ff, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

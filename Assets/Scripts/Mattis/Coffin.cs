@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Coffin : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class Coffin : MonoBehaviour
     public void WeakPointHit(Collider piece)
     {
         PointsHit++;
-        piece.transform.tag = "Broken";
+        piece.transform.tag = "Block";
         piece.transform.Translate(0,0.02f,0);//Feedback on weakhit
         Debug.Log("Pointhit: " +  PointsHit);
         
@@ -31,8 +32,10 @@ public class Coffin : MonoBehaviour
             {
                 Debug.Log(gameObject.transform.GetChild(i));
                 gameObject.transform.GetChild(i).AddComponent<Rigidbody>();
+                gameObject.transform.GetChild(i).GetComponent<Rigidbody>().mass = 3;
                 gameObject.transform.GetChild(i).GetComponent<MeshCollider>().enabled = false;
                 gameObject.transform.GetChild(i).AddComponent<BoxCollider>();
+                //gameObject.transform.GetChild(i).GetComponent<BoxCollider>().size = new Vector3(gameObject.transform.GetChild(i).GetComponent<BoxCollider>().size.x, gameObject.transform.GetChild(i).GetComponent<BoxCollider>().size.y * 6, gameObject.transform.GetChild(i).GetComponent<BoxCollider>().size.z);
 
                 gameObject.transform.GetChild(i).GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-0.5f, 0.5f), 0.5f, Random.Range(-0.5f, 0.5f)), ForceMode.Impulse);
             }//Scatter pieces
