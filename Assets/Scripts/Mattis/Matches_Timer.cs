@@ -10,8 +10,8 @@ public class Matches_Timer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        timer = 300;
-        matches = 5; //1 match = 60sec
+        timer = 310;
+        matches = 6; //1 match = 60sec
         Render_Matches();
         
     }
@@ -20,26 +20,47 @@ public class Matches_Timer : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-        if ((timer/60)+1 < matches)
+        if (timer <= 0)
         {
-            Destroy(gameObject.transform.GetChild(matches + 2));//destroys the most left match
-            matches--;            
+            //gameover
         }
 
-        fire.transform.position.y = new Vector2(750, -320 + (2 * (timer % matches)));
+        if (((timer - 2) / 60) + 1 < matches)
+        {
+            gameObject.transform.GetChild(0).transform.GetComponent<Light>().intensity -= Time.deltaTime;//light goes out between matches
+        }
+        /*else if (((timer + 1) / 60) + 1 < matches)
+        {
+            gameObject.transform.GetChild(0).transform.GetComponent<Light>().intensity += Time.deltaTime*2;
+        }*/
+
+        if ((timer/60)+1 < matches)
+        {
+            Destroy(gameObject.transform.GetChild(matches).gameObject);//destroys the most left match
+            matches--;
+            gameObject.transform.GetChild(0).transform.GetComponent<Light>().intensity = 2; // new match gives light
+
+
+        }
+
+        fire.rectTransform.position = new Vector2(match.transform.position.x, match.transform.position.y + (1.6f * (timer % 60)));//moves the flame
+
+        
     }
 
     void Render_Matches()
     {
-        for (int i = gameObject.transform.childCount; i > 2; i--)
+        for (int i = gameObject.transform.childCount-1; i > 2; i--)
         {
-            Destroy(gameObject.transform.GetChild(i));//destroys all matches
+            Destroy(gameObject.transform.GetChild(i).gameObject);//destroys all matches
         }
 
         for (int i = 1; i < matches; i++)
         {
-            Instantiate(match, new Vector2(750 - (i * 60), -320), Quaternion.identity, gameObject.transform);//render out matches to canvas
+            Instantiate(match, new Vector2(match.transform.position.x - (i * 60), match.transform.position.y), Quaternion.identity, gameObject.transform);//render out matches to canvas
         }
-        Instantiate(fire, new Vector2(750, -320 + (2*(timer%matches))), Quaternion.identity, gameObject.transform);
+        //Instantiate(fire, new Vector2(750, -320 + (2*(timer%matches))), Quaternion.identity, gameObject.transform);
+        fire.transform.SetSiblingIndex(gameObject.transform.childCount);
+        //Debug.Log(gameObject.transform.GetChild(matches));
     }
 }
