@@ -10,7 +10,7 @@ public class Matches_Timer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        timer = 310;
+        timer = 301;
         matches = 6; //1 match = 60sec
         Render_Matches();
         
@@ -27,7 +27,7 @@ public class Matches_Timer : MonoBehaviour
 
         if (((timer - 2) / 60) + 1 < matches)
         {
-            gameObject.transform.GetChild(0).transform.GetComponent<Light>().intensity -= Time.deltaTime;//light goes out between matches
+            gameObject.transform.parent.GetChild(0).transform.GetComponent<Light>().intensity -= Time.deltaTime;//light goes out between matches
         }
         /*else if (((timer + 1) / 60) + 1 < matches)
         {
@@ -36,21 +36,21 @@ public class Matches_Timer : MonoBehaviour
 
         if ((timer/60)+1 < matches)
         {
-            Destroy(gameObject.transform.GetChild(matches).gameObject);//destroys the most left match
+            Destroy(gameObject.transform.GetChild(matches-1).gameObject);//destroys the most left match
             matches--;
-            gameObject.transform.GetChild(0).transform.GetComponent<Light>().intensity = 2; // new match gives light
+            gameObject.transform.parent.GetChild(0).transform.GetComponent<Light>().intensity = 2; // new match gives light
 
 
         }
 
-        fire.rectTransform.position = new Vector2(match.transform.position.x, match.transform.position.y + (1.6f * (timer % 60)));//moves the flame
+        fire.rectTransform.position = new Vector2(match.transform.position.x - ((matches-1) * 60), match.transform.position.y + (1.6f * (timer % 60)));//moves the flame
 
         
     }
 
     void Render_Matches()
     {
-        for (int i = gameObject.transform.childCount-1; i > 2; i--)
+        for (int i = gameObject.transform.childCount-1; i > 1; i--)
         {
             Destroy(gameObject.transform.GetChild(i).gameObject);//destroys all matches
         }
@@ -62,5 +62,12 @@ public class Matches_Timer : MonoBehaviour
         //Instantiate(fire, new Vector2(750, -320 + (2*(timer%matches))), Quaternion.identity, gameObject.transform);
         fire.transform.SetSiblingIndex(gameObject.transform.childCount);
         //Debug.Log(gameObject.transform.GetChild(matches));
+    }
+
+    public void addMatch(int amount)
+    {
+        timer += 60 * amount;
+        matches += amount;
+        Render_Matches();
     }
 }
