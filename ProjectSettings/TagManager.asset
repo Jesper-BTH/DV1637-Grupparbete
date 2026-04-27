@@ -10,6 +10,7 @@ TagManager:
   - Key
   - Block
   - ladder
+  - Dirt
   layers:
   - Default
   - TransparentFX
