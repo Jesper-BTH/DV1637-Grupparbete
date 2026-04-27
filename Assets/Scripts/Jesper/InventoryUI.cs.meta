@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 96c234fc9cd68594786646e6879dfec5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - inventory: {instanceID: 0}
+  - itemSlotParent: {instanceID: 0}
+  - itemSlotPrefab: {instanceID: 0}
+  - shovelIcon: {fileID: 21300000, guid: 9772da519e0a97449849aff0a0e1cd51, type: 3}
+  - keyIcon: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
