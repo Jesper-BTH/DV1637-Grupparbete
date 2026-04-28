@@ -8,6 +8,7 @@ public class Dial : MonoBehaviour
 
     private bool isRotating = false;
     private int currentIndex;
+
     private const int maxNumbers = 5;
     private const float angleStep = 360f / maxNumbers;
 
@@ -16,8 +17,8 @@ public class Dial : MonoBehaviour
 
     private void Start()
     {
-        currentIndex = Random.Range(0, maxNumbers);
-        transform.localRotation = Quaternion.Euler(currentIndex * -angleStep, 0, 0);
+        currentIndex = 0; // always start on 1
+        transform.localRotation = Quaternion.Euler(0, -angleStep * currentIndex, 0);
     }
 
     public void Rotate()
@@ -53,15 +54,6 @@ public class Dial : MonoBehaviour
 
     public int GetNumber()
     {
-        return currentIndex + 1; 
-    }
-    public void Lock()
-    {
-        isRotating = true;
-    }
-
-    public void Unlock()
-    {
-        isRotating = false;
+        return currentIndex + 1;
     }
 }

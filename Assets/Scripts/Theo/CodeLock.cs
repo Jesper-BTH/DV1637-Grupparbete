@@ -11,7 +11,6 @@ public class CodeLock : MonoBehaviour
 
     [Header(" Events ")]
     [SerializeField] private UnityEvent onCorrectCombinationFound;
-    [SerializeField] private UnityEvent onWrongCombination;
 
     private void Start()
     {
@@ -29,25 +28,10 @@ public class CodeLock : MonoBehaviour
 
             if (dials[i].GetNumber() != expected)
             {
-                UnlockAll();
-                onWrongCombination?.Invoke();
                 return;
             }
         }
 
-        LockAll();
         onCorrectCombinationFound?.Invoke();
-    }
-
-    private void LockAll()
-    {
-        foreach (var dial in dials)
-            dial.Lock();
-    }
-
-    private void UnlockAll()
-    {
-        foreach (var dial in dials)
-            dial.Unlock();
     }
 }
