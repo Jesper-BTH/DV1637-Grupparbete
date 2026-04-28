@@ -7,7 +7,7 @@ MonoImporter:
   - inventory: {instanceID: 0}
   - itemSlotParent: {instanceID: 0}
   - itemSlotPrefab: {instanceID: 0}
-  - shovelIcon: {fileID: 21300000, guid: 9772da519e0a97449849aff0a0e1cd51, type: 3}
+  - shovelIcon: {fileID: 21300000, guid: 51240c9403c086944b4e9815aabe1c24, type: 3}
   - keyIcon: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
