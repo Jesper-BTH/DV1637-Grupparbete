@@ -43,7 +43,7 @@ public class Matches_Timer : MonoBehaviour
 
         }
 
-        fire.rectTransform.position = new Vector2(match.transform.position.x - ((matches-1) * 60), match.transform.position.y + (1.6f * (timer % 60)));//moves the flame
+        fire.rectTransform.position = new Vector2(match.transform.position.x - ((matches-1) * 60), match.transform.position.y + (3 * (timer % 60) * Screen.height/1080));//moves the flame
 
         
     }
