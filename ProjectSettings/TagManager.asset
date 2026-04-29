@@ -11,6 +11,7 @@ TagManager:
   - Block
   - ladder
   - Dirt
+  - KeyDoor
   layers:
   - Default
   - TransparentFX

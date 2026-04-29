@@ -19,7 +19,9 @@ public class PlayerInteraction : MonoBehaviour
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             if (inventory.HasItem(ItemType.Shovel))
+            {
                 TryInteract(InteractionType.Dig);
+            }
             else
                 TryInteract(InteractionType.Hit);
         }
@@ -39,6 +41,26 @@ public class PlayerInteraction : MonoBehaviour
             {
                 hit.collider.GetComponentInParent<Coffin>().WeakPointHit(hit.collider);
             }//Checks if ray hits a weakpoint and does the weakpscript - Mattis
+
+            //theo
+            if (hit.collider.CompareTag("Dirt") && inventory.HasItem(ItemType.Shovel))
+            {
+                Destroy(hit.collider.gameObject);
+                return; // stop further interaction if destroyed
+            }
+            //theo
+            if (hit.collider.CompareTag("KeyDoor") && inventory.HasItem(ItemType.Key))
+            {
+                KeyDoor door = hit.collider.GetComponent<KeyDoor>();
+
+                if (door != null)
+                {
+                    door.OpenDoor();
+                }
+
+                return;
+            }
+            //not theo
 
             Debug.Log("Ray hit: " + hit.collider.name);
             Debug.Log("Component: " + hit.collider.GetComponent<IInteractable>());

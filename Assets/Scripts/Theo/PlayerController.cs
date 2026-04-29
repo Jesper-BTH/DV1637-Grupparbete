@@ -19,6 +19,11 @@ public class PlayercController : MonoBehaviour
     public InputActionReference moveAction;
     public InputActionReference jumpAction;
 
+    void Start()
+    {
+        Application.targetFrameRate = -1;
+        QualitySettings.vSyncCount = 0;
+    }
     private void OnEnable()
     {
         moveAction.action.Enable();
