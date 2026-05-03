@@ -4,14 +4,15 @@ using UnityEngine.UI;
 public class Matches_Timer : MonoBehaviour
 {
     public float timer;
+    public int TotalMatches = 5;
     int matches;
     public RawImage match;
     public RawImage fire;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        timer = 301;
-        matches = 6; //1 match = 60sec
+        timer = (TotalMatches * 60) + 1;
+        matches = TotalMatches + 1; //1 match = 60sec
         Render_Matches();
         
     }
@@ -22,6 +23,7 @@ public class Matches_Timer : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
+            GameObject.Find("Lose_screen").GetComponent<LoseScreen>().enabled = true;
             //gameover
         }
 
@@ -68,6 +70,8 @@ public class Matches_Timer : MonoBehaviour
     {
         timer += 60 * amount;
         matches += amount;
+        TotalMatches += amount;
         Render_Matches();
     }
+    
 }
