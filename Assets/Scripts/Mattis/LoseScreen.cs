@@ -5,12 +5,14 @@ public class LoseScreen : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Canvas Menu;
-    private bool FadeIn = false;
+    public bool FadeIn = false;
     public TMP_Text UsedTime;
+    public TMP_Text ProgressText;
     public GameObject Timer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        FadeIn = false;
         Menu.enabled = false;
     }
 
@@ -24,9 +26,9 @@ public class LoseScreen : MonoBehaviour
     private void OnEnable()
     {
         Cursor.visible = true;
-        Time.timeScale = 0;
         FadeIn = true;
         UsedTime.text = "Time played: " + Timer.GetComponent<Matches_Timer>().TotalMatches + "minutes";
+        //ProgressText.text = list of checkpoints
     }
 
     public void Restart()
@@ -43,12 +45,17 @@ public class LoseScreen : MonoBehaviour
     {
         Application.Quit();
     }
-    void FixedUpdate()
+    void Update()
     {
         if (FadeIn)
         {
-            //canvas opacity + 1
-            //if opacity = 100 FadeIn = false
+            Menu.GetComponent<CanvasGroup>().alpha += Time.deltaTime;
+            if (Menu.GetComponent<CanvasGroup>().alpha >= 1)
+            {
+                Time.timeScale = 0;
+                FadeIn = false;
+            }
+            //canvas fade in effect
         }
     }
 }
