@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoseScreen : MonoBehaviour
 {
@@ -23,9 +24,11 @@ public class LoseScreen : MonoBehaviour
 
     }*/
 
-    private void OnEnable()
+    public void Lose()
     {
+        Menu.enabled = true;
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
         FadeIn = true;
         UsedTime.text = "Time played: " + Timer.GetComponent<Matches_Timer>().TotalMatches + "minutes";
         //ProgressText.text = list of checkpoints
@@ -33,11 +36,13 @@ public class LoseScreen : MonoBehaviour
 
     public void Restart()
     {
+        SceneManager.LoadScene(1);
         //restart scen
     }
 
     public void BackToMenu()
     {
+        SceneManager.LoadScene(0);
         //change scen to main menu
     }
 
@@ -49,7 +54,7 @@ public class LoseScreen : MonoBehaviour
     {
         if (FadeIn)
         {
-            Menu.GetComponent<CanvasGroup>().alpha += Time.deltaTime;
+            Menu.GetComponent<CanvasGroup>().alpha += Time.deltaTime*0.5f;
             if (Menu.GetComponent<CanvasGroup>().alpha >= 1)
             {
                 Time.timeScale = 0;

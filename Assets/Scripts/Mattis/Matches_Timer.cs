@@ -23,7 +23,7 @@ public class Matches_Timer : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            GameObject.Find("Lose_screen").GetComponent<LoseScreen>().enabled = true;
+            GameObject.Find("Lose_screen").GetComponent<LoseScreen>().Lose();
             //gameover
         }
 
@@ -45,8 +45,10 @@ public class Matches_Timer : MonoBehaviour
 
         }
 
-        fire.rectTransform.position = new Vector2(match.transform.position.x - ((matches-1) * 60), match.transform.position.y + (3 * (timer % 60) * Screen.height/1080));//moves the flame
-
+        if (timer > 0)
+        {
+            fire.rectTransform.position = new Vector2(match.transform.position.x - ((matches - 1) * 60), match.transform.position.y + (3 * (timer % 60) * Screen.height / 1080));//moves the flame
+        }
         
     }
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -19,10 +20,14 @@ public class PauseMenu : MonoBehaviour
         Menu.enabled = false;
 
     }
-
+    public void Restart()
+    {
+        SceneManager.LoadScene(1);
+        //restart scen
+    }
     public void BackToMenu()
     {
-
+        SceneManager.LoadScene(0);
     }
 
     public void Quit()
