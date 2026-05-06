@@ -14,8 +14,9 @@ public class WinCon : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
+        Debug.Log("Win: "+collision.transform.tag);
         if (collision.transform.CompareTag("Player"))
         {
             GameObject.Find("Win_Screen").GetComponent<WinScreen>().Win();

@@ -20,7 +20,7 @@ public class WinScreen : MonoBehaviour
         Menu.enabled = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
-        UsedTime.text = "Time played: " + ((Timer.GetComponent<Matches_Timer>().TotalMatches*60) - (int)Timer.GetComponent<Matches_Timer>().timer)/60 + "minutes, " + ((Timer.GetComponent<Matches_Timer>().TotalMatches * 60) - (int)Timer.GetComponent<Matches_Timer>().timer) % 60 + "seconds";
+        UsedTime.text = "Time played:\n" + ((Timer.GetComponent<Matches_Timer>().TotalMatches*60) - (int)Timer.GetComponent<Matches_Timer>().timer)/60 + " minutes\n" + ((Timer.GetComponent<Matches_Timer>().TotalMatches * 60) - (int)Timer.GetComponent<Matches_Timer>().timer) % 60 + " seconds";
     }
 
     // Update is called once per frame

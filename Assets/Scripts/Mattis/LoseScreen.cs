@@ -30,7 +30,7 @@ public class LoseScreen : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         FadeIn = true;
-        UsedTime.text = "Time played: " + Timer.GetComponent<Matches_Timer>().TotalMatches + "minutes";
+        UsedTime.text = "Time played:\n" + Timer.GetComponent<Matches_Timer>().TotalMatches + " minutes";
         //ProgressText.text = list of checkpoints
     }
 
