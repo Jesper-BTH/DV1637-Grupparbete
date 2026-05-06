@@ -30,6 +30,7 @@ public class WinScreen : MonoBehaviour
     }
     public void Restart()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(1);
         //restart scene
     }
