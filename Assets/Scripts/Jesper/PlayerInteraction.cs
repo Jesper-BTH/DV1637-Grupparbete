@@ -51,11 +51,14 @@ public class PlayerInteraction : MonoBehaviour
             //theo
             if (hit.collider.CompareTag("KeyDoor") && inventory.HasItem(ItemType.Key))
             {
-                KeyDoor door = hit.collider.GetComponentInParent<KeyDoor>();
-
-                if (door != null)
+                if (Keyboard.current.eKey.wasPressedThisFrame)
                 {
-                    door.OpenDoor();
+                    KeyDoor door = hit.collider.GetComponentInParent<KeyDoor>();
+
+                    if (door != null)
+                    {
+                        door.OpenDoor();
+                    }
                 }
 
                 return;
