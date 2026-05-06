@@ -35501,6 +35501,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6065569986289945827, guid: 13644e93cbf4abf4984b70acc4eac911, type: 3}
   m_PrefabInstance: {fileID: 6141014533243107949}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2320547016041105677 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8434530826117346144, guid: 13644e93cbf4abf4984b70acc4eac911, type: 3}
+  m_PrefabInstance: {fileID: 6141014533243107949}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5dc6dfa89b3c1546b3761f5122a05d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CodeLockDoor
 --- !u!1001 &7530397336835642233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35552,6 +35563,14 @@ PrefabInstance:
     - target: {fileID: 3802490020640852554, guid: 9a0a5cefc6b4bdb4fa751c8ce68aa4c1, type: 3}
       propertyPath: m_Name
       value: CodeLock
+      objectReference: {fileID: 0}
+    - target: {fileID: 8971481325882661179, guid: 9a0a5cefc6b4bdb4fa751c8ce68aa4c1, type: 3}
+      propertyPath: onCorrectCombinationFound.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2320547016041105677}
+    - target: {fileID: 8971481325882661179, guid: 9a0a5cefc6b4bdb4fa751c8ce68aa4c1, type: 3}
+      propertyPath: onCorrectCombinationFound.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Open
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
