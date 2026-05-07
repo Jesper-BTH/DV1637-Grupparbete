@@ -8,7 +8,7 @@ MonoImporter:
   - itemSlotParent: {instanceID: 0}
   - itemSlotPrefab: {instanceID: 0}
   - shovelIcon: {fileID: 21300000, guid: 51240c9403c086944b4e9815aabe1c24, type: 3}
-  - keyIcon: {instanceID: 0}
+  - keyIcon: {fileID: 21300000, guid: d3b7ae986da193a4d9ef7671f7cb058c, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
