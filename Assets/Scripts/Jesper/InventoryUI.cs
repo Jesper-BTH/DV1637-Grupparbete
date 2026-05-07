@@ -30,6 +30,9 @@ public class InventoryUI : MonoBehaviour
 
         foreach (var item in inventory.items)
         {
+            if (item == ItemType.Matches)
+                continue;
+
             GameObject slot = Instantiate(itemSlotPrefab, itemSlotParent);
 
             Image icon = slot.transform.Find("Icon").GetComponent<Image>();

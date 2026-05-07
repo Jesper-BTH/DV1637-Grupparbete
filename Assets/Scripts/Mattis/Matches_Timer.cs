@@ -40,7 +40,7 @@ public class Matches_Timer : MonoBehaviour
         {
             Destroy(gameObject.transform.GetChild(matches-1).gameObject);//destroys the most left match
             matches--;
-            if (timer < 2)
+            if (timer > 2)
             {
                 gameObject.transform.parent.GetChild(0).transform.GetComponent<Light>().intensity = 2; // new match gives light
             }
@@ -55,7 +55,7 @@ public class Matches_Timer : MonoBehaviour
 
     void Render_Matches()
     {
-        for (int i = gameObject.transform.childCount-1; i > 1; i--)
+        for (int i = gameObject.transform.childCount-2; i > 1; i--)
         {
             Destroy(gameObject.transform.GetChild(i).gameObject);//destroys all matches
         }
