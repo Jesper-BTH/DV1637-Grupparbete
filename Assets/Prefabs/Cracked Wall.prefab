@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 73a8792f98b5349458a04f00d2333645, type: 3}
       propertyPath: m_LocalScale.y
-      value: 250
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 73a8792f98b5349458a04f00d2333645, type: 3}
       propertyPath: m_LocalScale.z
@@ -122,9 +122,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 73a8792f98b5349458a04f00d2333645, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5013821718999958700}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 73a8792f98b5349458a04f00d2333645, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4427731418497974434}
     - targetCorrespondingSourceObject: {fileID: 2040542448765327740, guid: 73a8792f98b5349458a04f00d2333645, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4313783728179063956}
@@ -312,23 +309,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7669264943260810459}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5709f4d1816c234e9d5c756c3db67c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrackedWall
---- !u!114 &4427731418497974434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7669264943260810459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e75302e8a16b6684fb35c1389e071098, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Coffin
 --- !u!1 &8862710848177887478 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2040542448765327740, guid: 73a8792f98b5349458a04f00d2333645, type: 3}
