@@ -5,7 +5,7 @@ public class Matches_Timer : MonoBehaviour
 {
     public float timer;
     public int TotalMatches = 5;
-    int matches;
+    public int matches;
     public RawImage match;
     public RawImage fire;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -55,7 +55,7 @@ public class Matches_Timer : MonoBehaviour
 
     void Render_Matches()
     {
-        for (int i = gameObject.transform.childCount-2; i > 1; i--)
+        for (int i = gameObject.transform.childCount-2; i > 0; i--)
         {
             Destroy(gameObject.transform.GetChild(i).gameObject);//destroys all matches
         }
