@@ -22,7 +22,7 @@ public class CrackedWall : MonoBehaviour
     {
         PointsHit++;
         piece.transform.tag = "Block";
-        piece.transform.Translate(0, 1f, 0);//Feedback on weakhit
+        piece.transform.Translate(0, 0.1f, 0);//Feedback on weakhit
         Debug.Log("Pointhit: " + PointsHit);
 
         if (PointsHit >= 3)

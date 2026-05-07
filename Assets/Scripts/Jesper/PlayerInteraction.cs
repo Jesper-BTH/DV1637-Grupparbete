@@ -39,8 +39,22 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (hit.collider.CompareTag("Weak"))
             {
-                hit.collider.GetComponentInParent<Coffin>().WeakPointHit(hit.collider);
-            }//Checks if ray hits a weakpoint and does the weakpscript - Mattis
+                Coffin coffin = hit.collider.GetComponentInParent<Coffin>();
+
+                if (coffin != null)
+                {
+                    coffin.WeakPointHit(hit.collider);
+                    return;
+                }
+
+                CrackedWall wall = hit.collider.GetComponentInParent<CrackedWall>();
+                if (wall != null)
+                {
+                    wall.WeakPointHit(hit.collider);
+                    return;
+                }
+
+            }
 
             //theo
             if (hit.collider.CompareTag("Dirt") && inventory.HasItem(ItemType.Shovel))
