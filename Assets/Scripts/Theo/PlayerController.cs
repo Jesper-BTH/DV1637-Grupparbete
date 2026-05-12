@@ -90,7 +90,7 @@ public class PlayercController : MonoBehaviour
         }
 
         //Apply gravity
-        playerVelocity.y += gravityValue * Time.deltaTime;
+        playerVelocity.y += gravityValue * Time.deltaTime; //delta.time here was not the issue -Mattis
 
         //Move
         Vector3 finalMove = move * playerSpeed + Vector3.up * playerVelocity.y;
