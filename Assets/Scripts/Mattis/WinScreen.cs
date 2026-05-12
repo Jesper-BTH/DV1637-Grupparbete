@@ -21,6 +21,7 @@ public class WinScreen : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         UsedTime.text = "Time played:\n" + ((Timer.GetComponent<Matches_Timer>().TotalMatches*60) - (int)Timer.GetComponent<Matches_Timer>().timer)/60 + " minutes\n" + ((Timer.GetComponent<Matches_Timer>().TotalMatches * 60) - (int)Timer.GetComponent<Matches_Timer>().timer) % 60 + " seconds";
+        Time.timeScale = 0;
     }
 
     // Update is called once per frame

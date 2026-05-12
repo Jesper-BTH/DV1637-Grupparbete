@@ -8,9 +8,11 @@ public class Matches_Timer : MonoBehaviour
     public int matches;
     public RawImage match;
     public RawImage fire;
+    bool isOver;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        isOver = false;
         timer = (TotalMatches * 60) + 1;
         matches = TotalMatches + 1; //1 match = 60sec
         Render_Matches();
@@ -21,8 +23,9 @@ public class Matches_Timer : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-        if (timer <= 0)
+        if (timer <= 0 && !isOver)
         {
+            isOver = true;
             GameObject.Find("Lose_screen").GetComponent<LoseScreen>().Lose();
             //gameover
         }
