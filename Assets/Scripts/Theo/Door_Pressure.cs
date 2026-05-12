@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Door_Pressure : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Door_Pressure : MonoBehaviour
     public float speed = 2f;
     private float openDelay = 2f;
     private float timer = 0f;
+    private bool hasShownText = false;
+    public GameObject textUi;
 
     private Vector3 closedPos;
     private Vector3 openPos;
@@ -16,22 +19,40 @@ public class Door_Pressure : MonoBehaviour
     {
         closedPos = door.position;
         openPos = closedPos + openOffset;
+
+
+    }
+    private IEnumerator ShowTextForSeconds()
+    {
+        textUi.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+
+        textUi.SetActive(false);
     }
     void Update()
     {
-        if(AreAllPlatesPressed())
+        if (AreAllPlatesPressed())
         {
             timer += Time.deltaTime;
 
             if (timer >= openDelay)
             {
                 OpenDoor();
+
+                if (!hasShownText)
+                {
+                    StartCoroutine(ShowTextForSeconds());
+                    hasShownText = true;
+                }
             }
         }
         else
         {
-            timer = 0f; // reset if any plate is released
+            timer = 0f;
             CloseDoor();
+
+            hasShownText = false; // reset when plates are released
         }
     }
 
@@ -39,7 +60,7 @@ public class Door_Pressure : MonoBehaviour
     {
         foreach (PressurePlate plate in plates)
         {
-            if (!plate.isPressed)
+            if (plate.isPressed != 1)
             {
                 return false; // found one not pressed
             }

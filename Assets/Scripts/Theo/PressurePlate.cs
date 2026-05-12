@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PressurePlate : MonoBehaviour
 {
-    public bool isPressed = false;
+    public int isPressed = 0;
     private Animator animator;
 
     private void Start()
@@ -14,8 +14,9 @@ public class PressurePlate : MonoBehaviour
     {
         if (other.CompareTag("Block"))
         {
-            isPressed = true;
-            animator.SetBool("isPressed", true);
+            isPressed++;
+
+            animator.SetInteger("isPressed", isPressed);
         }
     }
 
@@ -23,8 +24,12 @@ public class PressurePlate : MonoBehaviour
     {
         if (other.CompareTag("Block"))
         {
-            isPressed = false;
-            animator.SetBool("isPressed", false);
+            isPressed--;
+
+            if (isPressed < 0)
+                isPressed = 0;
+
+            animator.SetInteger("isPressed", isPressed);
         }
     }
 }

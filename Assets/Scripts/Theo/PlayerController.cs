@@ -62,6 +62,16 @@ public class PlayercController : MonoBehaviour
                 playerVelocity.y = -2f;
         }
 
+        // Sprint
+        if (Keyboard.current.leftShiftKey.isPressed)
+        {
+            playerSpeed = 7.5f;
+        }
+        else
+        {
+            playerSpeed = 5.0f;
+        }
+
         // Read input
         Vector2 input = moveAction.action.ReadValue<Vector2>();
         Vector3 move = transform.right * input.x + transform.forward * input.y;

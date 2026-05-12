@@ -1,12 +1,21 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class PlayerInteraction : MonoBehaviour
 {
     public Camera cam;
     public float range = 3f;
     public Inventory inventory;
+    public GameObject textUi;
+    private IEnumerator ShowTextForSeconds()
+    {
+        textUi.SetActive(true);
 
+        yield return new WaitForSeconds(2f);
+
+        textUi.SetActive(false);
+    }
     void Update()
     {
         // Interact with E
@@ -26,7 +35,6 @@ public class PlayerInteraction : MonoBehaviour
                 TryInteract(InteractionType.Hit);
         }
     }
-
     void TryInteract(InteractionType type)
     {
         // Shoot ray from center of screen
@@ -56,11 +64,18 @@ public class PlayerInteraction : MonoBehaviour
 
             }
 
-            //theo
-            if (hit.collider.CompareTag("Dirt") && inventory.HasItem(ItemType.Shovel))
+            // theo
+            if (hit.collider.CompareTag("Dirt"))
             {
-                Destroy(hit.collider.gameObject);
-                return; // stop further interaction if destroyed
+                if (inventory.HasItem(ItemType.Shovel))
+                {
+                    Destroy(hit.collider.gameObject);
+                    return;
+                }
+                else
+                {
+                    StartCoroutine(ShowTextForSeconds());
+                }
             }
             //theo
             if (hit.collider.CompareTag("KeyDoor") && inventory.HasItem(ItemType.Key))
