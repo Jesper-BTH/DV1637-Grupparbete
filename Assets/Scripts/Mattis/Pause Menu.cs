@@ -14,6 +14,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        GameObject.Find("Player").transform.GetChild(3).GetComponent<MouseLook>().enabled = true;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
@@ -22,12 +23,14 @@ public class PauseMenu : MonoBehaviour
     }
     public void Restart()
     {
+        GameObject.Find("Player").transform.GetChild(3).GetComponent<MouseLook>().enabled = true;
         Time.timeScale = 1;
         SceneManager.LoadScene(1);
         //restart scen
     }
     public void BackToMenu()
     {
+        //GameObject.Find("Player").transform.GetChild(3).GetComponent<MouseLook>().enabled = true;
         SceneManager.LoadScene(0);
     }
 

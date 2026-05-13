@@ -17,6 +17,7 @@ public class WinScreen : MonoBehaviour
 
     public void Win()
     {
+        GameObject.Find("Player").transform.GetChild(3).GetComponent<MouseLook>().enabled = false;
         Menu.enabled = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
@@ -31,6 +32,7 @@ public class WinScreen : MonoBehaviour
     }
     public void Restart()
     {
+        GameObject.Find("Player").transform.GetChild(3).GetComponent<MouseLook>().enabled = true;
         Time.timeScale = 1;
         SceneManager.LoadScene(1);
         //restart scene
@@ -38,6 +40,7 @@ public class WinScreen : MonoBehaviour
 
     public void BackToMenu()
     {
+        //GameObject.Find("Player").transform.GetChild(3).GetComponent<MouseLook>().enabled = true;
         SceneManager.LoadScene(0);
     }
 

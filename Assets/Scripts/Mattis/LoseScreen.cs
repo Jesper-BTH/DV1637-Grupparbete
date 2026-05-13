@@ -26,6 +26,7 @@ public class LoseScreen : MonoBehaviour
 
     public void Lose()
     {
+        GameObject.Find("Player").transform.GetChild(3).GetComponent<MouseLook>().enabled = false;
         Menu.enabled = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
@@ -36,6 +37,7 @@ public class LoseScreen : MonoBehaviour
 
     public void Restart()
     {
+        GameObject.Find("Player").transform.GetChild(3).GetComponent<MouseLook>().enabled = true;
         Time.timeScale = 1;
         SceneManager.LoadScene(1);
         //restart scen
@@ -43,6 +45,7 @@ public class LoseScreen : MonoBehaviour
 
     public void BackToMenu()
     {
+        //GameObject.Find("Player").transform.GetChild(3).GetComponent<MouseLook>().enabled = true;
         SceneManager.LoadScene(0);
         //change scen to main menu
     }

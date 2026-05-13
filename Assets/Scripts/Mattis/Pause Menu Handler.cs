@@ -17,6 +17,7 @@ public class PauseMenuHandler : MonoBehaviour
     {
         if (pause.WasPressedThisFrame())
         {
+            GameObject.Find("Player").transform.GetChild(3).GetComponent<MouseLook>().enabled = false;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Confined;
             Time.timeScale = 0;

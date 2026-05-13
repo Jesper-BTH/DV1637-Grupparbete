@@ -22,7 +22,10 @@ public class Coffin : MonoBehaviour
     {
         PointsHit++;
         piece.transform.tag = "Block";
-        piece.transform.Translate(0,0.02f,0);//Feedback on weakhit
+        piece.transform.Translate(0,0.06f,0);//Feedback on weakhit
+        //Vector3 rotvect = piece.transform.position - GameObject.Find("Player").transform.position;
+        //piece.transform.Rotate(Mathf.Atan(10*rotvect.z/rotvect.y), Mathf.Atan(10*rotvect.x/rotvect.z), Mathf.Atan(10*rotvect.y/rotvect.x));
+        //piece.transform.Rotate(GameObject.Find("Player").transform.rotation.x+180, GameObject.Find("Player").transform.rotation.y+180, GameObject.Find("Player").transform.rotation.y/10);
         Debug.Log("Pointhit: " +  PointsHit);
         
         if(PointsHit >= 3)
