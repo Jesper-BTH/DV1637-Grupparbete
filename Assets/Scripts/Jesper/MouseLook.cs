@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class MouseLook : MonoBehaviour
 {
-    [SerializeField] float mouseSensitivity = 30f;
+    [SerializeField] float mouseSensitivity = 0.05f;
     [SerializeField] InputAction look;
 
     float xRotation;
@@ -23,8 +23,8 @@ public class MouseLook : MonoBehaviour
     void Update()
     {
         Vector2 lookValue = look.ReadValue<Vector2>();
-        float xLook = lookValue.x * mouseSensitivity * Time.deltaTime;
-        float yLook = lookValue.y * mouseSensitivity * Time.deltaTime;
+        float xLook = lookValue.x * mouseSensitivity /** Time.deltaTime*/;
+        float yLook = lookValue.y * mouseSensitivity /** Time.deltaTime*/; //Removed deltatime - Mattis
 
         xRotation -= yLook;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
