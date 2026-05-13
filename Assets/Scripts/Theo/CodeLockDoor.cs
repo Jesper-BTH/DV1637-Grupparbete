@@ -19,6 +19,10 @@ public class CodeLockDoor : MonoBehaviour
     {
         open = true;
     }
+    public void Close()
+    {
+        open = false;
+    }
 
     private void Update()
     {
