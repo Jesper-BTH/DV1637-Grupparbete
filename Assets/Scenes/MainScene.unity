@@ -430,17 +430,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.011185527, y: 0.002678965, z: 0.022371061}
   m_Center: {x: 0, y: 0.0020300038, z: 0.00020442728}
---- !u!114 &71023830 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1726395882435511178, guid: 7e43615882aa9504ab95b6ab2d1f6c2f, type: 3}
-  m_PrefabInstance: {fileID: 1764242658}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ca54068e09f7614b8fb586b3f560906, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
 --- !u!1 &83022077
 GameObject:
   m_ObjectHideFlags: 0
@@ -2456,17 +2445,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4918490559784130692, guid: 968ea02e04cc81647ab68bb90d963252, type: 3}
   m_PrefabInstance: {fileID: 1565421652}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &450700154 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1726395882435511178, guid: 7e43615882aa9504ab95b6ab2d1f6c2f, type: 3}
-  m_PrefabInstance: {fileID: 1507789023}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ca54068e09f7614b8fb586b3f560906, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
 --- !u!1 &478144639
 GameObject:
   m_ObjectHideFlags: 0
@@ -5835,11 +5813,11 @@ PrefabInstance:
     - target: {fileID: 3256036611017571216, guid: efaed08ec61457c4590cd5decf75b686, type: 3}
       propertyPath: 'plates.Array.data[0]'
       value: 
-      objectReference: {fileID: 71023830}
+      objectReference: {fileID: 1764242659}
     - target: {fileID: 3256036611017571216, guid: efaed08ec61457c4590cd5decf75b686, type: 3}
       propertyPath: 'plates.Array.data[1]'
       value: 
-      objectReference: {fileID: 450700154}
+      objectReference: {fileID: 1507789024}
     - target: {fileID: 5840658452875383522, guid: efaed08ec61457c4590cd5decf75b686, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7654,6 +7632,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e43615882aa9504ab95b6ab2d1f6c2f, type: 3}
+--- !u!114 &1507789024 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2928838982566101817, guid: 7e43615882aa9504ab95b6ab2d1f6c2f, type: 3}
+  m_PrefabInstance: {fileID: 1507789023}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca54068e09f7614b8fb586b3f560906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
 --- !u!43 &1524274755
 Mesh:
   m_ObjectHideFlags: 0
@@ -9091,6 +9080,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e43615882aa9504ab95b6ab2d1f6c2f, type: 3}
+--- !u!114 &1764242659 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2928838982566101817, guid: 7e43615882aa9504ab95b6ab2d1f6c2f, type: 3}
+  m_PrefabInstance: {fileID: 1764242658}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca54068e09f7614b8fb586b3f560906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
 --- !u!1 &1894616759
 GameObject:
   m_ObjectHideFlags: 0

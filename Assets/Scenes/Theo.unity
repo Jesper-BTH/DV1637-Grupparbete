@@ -232,6 +232,17 @@ Transform:
   - {fileID: 1500334083}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6773942 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2928838982566101817, guid: 7e43615882aa9504ab95b6ab2d1f6c2f, type: 3}
+  m_PrefabInstance: {fileID: 1137581015}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca54068e09f7614b8fb586b3f560906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
 --- !u!1001 &15699351
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -309,17 +320,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5374a9c64aa1b3d47bd2e15256141451, type: 3}
---- !u!114 &84802454 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1726395882435511178, guid: 7e43615882aa9504ab95b6ab2d1f6c2f, type: 3}
-  m_PrefabInstance: {fileID: 1137581015}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ca54068e09f7614b8fb586b3f560906, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
 --- !u!1 &93197593
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,13 +529,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &216008148 stripped
+--- !u!114 &342146918 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1726395882435511178, guid: 7e43615882aa9504ab95b6ab2d1f6c2f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2928838982566101817, guid: 7e43615882aa9504ab95b6ab2d1f6c2f, type: 3}
   m_PrefabInstance: {fileID: 3409172986705942964}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ca54068e09f7614b8fb586b3f560906, type: 3}
   m_Name: 
@@ -2980,11 +2980,11 @@ PrefabInstance:
     - target: {fileID: 3256036611017571216, guid: efaed08ec61457c4590cd5decf75b686, type: 3}
       propertyPath: 'plates.Array.data[0]'
       value: 
-      objectReference: {fileID: 216008148}
+      objectReference: {fileID: 342146918}
     - target: {fileID: 3256036611017571216, guid: efaed08ec61457c4590cd5decf75b686, type: 3}
       propertyPath: 'plates.Array.data[1]'
       value: 
-      objectReference: {fileID: 84802454}
+      objectReference: {fileID: 6773942}
     - target: {fileID: 5840658452875383522, guid: efaed08ec61457c4590cd5decf75b686, type: 3}
       propertyPath: m_LocalScale.x
       value: 6
