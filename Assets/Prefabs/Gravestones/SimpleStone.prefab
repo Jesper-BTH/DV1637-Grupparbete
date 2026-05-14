@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5dbf8b2d8ae10354a8656c579e1fb39b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5dbf8b2d8ae10354a8656c579e1fb39b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 160
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5dbf8b2d8ae10354a8656c579e1fb39b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5dbf8b2d8ae10354a8656c579e1fb39b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5dbf8b2d8ae10354a8656c579e1fb39b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 761336fab9c08a84a9c9c461c760d3bc, type: 2}
     - target: {fileID: 919132149155446097, guid: 5dbf8b2d8ae10354a8656c579e1fb39b, type: 3}
       propertyPath: m_Name
       value: SimpleStone
@@ -70,14 +74,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5dbf8b2d8ae10354a8656c579e1fb39b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9209857286771885872}
+      addedObject: {fileID: 1170009614383641187}
   m_SourcePrefab: {fileID: 100100000, guid: 5dbf8b2d8ae10354a8656c579e1fb39b, type: 3}
 --- !u!1 &4176351063006978680 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5dbf8b2d8ae10354a8656c579e1fb39b, type: 3}
   m_PrefabInstance: {fileID: 3833699061154062121}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &9209857286771885872
+--- !u!65 &1170009614383641187
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,5 +100,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.01, y: 0.01, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.017164221, y: 0.024135903, z: 0.003608522}
+  m_Center: {x: 0, y: 9.313226e-10, z: 0}
