@@ -7,10 +7,18 @@ public class Door_Pressure : MonoBehaviour
     public Transform door;
     public Vector3 openOffset = new Vector3(0, 5, 0);
     public float speed = 2f;
+
     private float openDelay = 2f;
     private float timer = 0f;
+
     private bool hasShownText = false;
+    private bool soundPlayed = false;
+
     public GameObject textUi;
+
+    // Audio
+    public AudioSource src;
+    public AudioClip sfx1;
 
     private Vector3 closedPos;
     private Vector3 openPos;
@@ -19,9 +27,8 @@ public class Door_Pressure : MonoBehaviour
     {
         closedPos = door.position;
         openPos = closedPos + openOffset;
-
-
     }
+
     private IEnumerator ShowTextForSeconds()
     {
         textUi.SetActive(true);
@@ -30,6 +37,7 @@ public class Door_Pressure : MonoBehaviour
 
         textUi.SetActive(false);
     }
+
     void Update()
     {
         if (AreAllPlatesPressed())
@@ -39,6 +47,13 @@ public class Door_Pressure : MonoBehaviour
             if (timer >= openDelay)
             {
                 OpenDoor();
+
+                // Play sound ONCE
+                if (!soundPlayed)
+                {
+                    src.PlayOneShot(sfx1);
+                    soundPlayed = true;
+                }
 
                 if (!hasShownText)
                 {
@@ -50,9 +65,11 @@ public class Door_Pressure : MonoBehaviour
         else
         {
             timer = 0f;
+
             CloseDoor();
 
-            hasShownText = false; // reset when plates are released
+            hasShownText = false;
+            soundPlayed = false;
         }
     }
 
@@ -62,20 +79,28 @@ public class Door_Pressure : MonoBehaviour
         {
             if (plate.isPressed != 1)
             {
-                return false; // found one not pressed
+                return false;
             }
         }
 
-        return true; // all are pressed
+        return true;
     }
 
     void OpenDoor()
     {
-        door.position = Vector3.Lerp(door.position, openPos, Time.deltaTime * speed);
+        door.position = Vector3.Lerp(
+            door.position,
+            openPos,
+            Time.deltaTime * speed
+        );
     }
 
     void CloseDoor()
     {
-        door.position = Vector3.Lerp(door.position, closedPos, Time.deltaTime * speed);
+        door.position = Vector3.Lerp(
+            door.position,
+            closedPos,
+            Time.deltaTime * speed
+        );
     }
 }

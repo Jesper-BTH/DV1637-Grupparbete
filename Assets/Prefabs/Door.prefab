@@ -130,3 +130,6 @@ MonoBehaviour:
   door: {fileID: 5840658452875383522}
   openOffset: {x: 0, y: 5, z: 0}
   speed: 1
+  textUi: {fileID: 0}
+  src: {fileID: 82024950598525423, guid: 6484ba00b20f13b409c47b9179dfe730, type: 3}
+  sfx1: {fileID: 8300000, guid: 2da7bedd43cdcaf499a9e78768b9555d, type: 3}
