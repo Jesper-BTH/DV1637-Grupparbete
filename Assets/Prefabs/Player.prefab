@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3308758432074142338}
   - component: {fileID: -3583756826850271249}
   - component: {fileID: -8873852385518745414}
+  - component: {fileID: -2633216286821412099}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -123,6 +124,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
   items: 
+--- !u!114 &-2633216286821412099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639946295995883497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5532361c872df114794deda5b6bae396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryDrop
+  inventory: {fileID: -8873852385518745414}
+  playerCamera: {fileID: 6823973533381911049}
+  itemPrefabs:
+  - itemType: 0
+    prefab: {fileID: 6448087085980594049, guid: 959cd7cdf3cd86f43994e29aa3f20d18, type: 3}
+  - itemType: 1
+    prefab: {fileID: 5399739053879116850, guid: 80f401d9d81a3bd45903fabbf9025cd0, type: 3}
 --- !u!1 &1506055863228655827
 GameObject:
   m_ObjectHideFlags: 0
