@@ -1,12 +1,19 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+
 
 public class MouseLook : MonoBehaviour
 {
-    [SerializeField] float mouseSensitivity = 0.05f;
+    public Slider slider;
+    public float mouseSensitivity = 0.1f;
     [SerializeField] InputAction look;
 
     float xRotation;
+    void Start()
+    {   
+        slider.value = mouseSensitivity;
+    }
 
     void OnEnable()
     {
@@ -33,5 +40,11 @@ public class MouseLook : MonoBehaviour
 
         if (transform.parent != null)
             transform.parent.Rotate(Vector3.up, xLook, Space.World);
+        
+    }
+    // Called by UI slider
+    public void SetSensitivity()
+    {
+        mouseSensitivity = slider.value/5;
     }
 }

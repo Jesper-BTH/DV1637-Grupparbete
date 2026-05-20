@@ -314,6 +314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5709f4d1816c234e9d5c756c3db67c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrackedWall
+  src: {fileID: 82024950598525423, guid: 6484ba00b20f13b409c47b9179dfe730, type: 3}
+  sfx1: {fileID: 8300000, guid: 0178d14efb167ad4b97a0b2fe9584b50, type: 3}
 --- !u!1 &8862710848177887478 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2040542448765327740, guid: 73a8792f98b5349458a04f00d2333645, type: 3}

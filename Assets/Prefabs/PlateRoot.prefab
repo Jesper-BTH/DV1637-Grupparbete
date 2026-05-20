@@ -290,6 +290,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
   isPressed: 0
+  src: {fileID: 0}
+  sfx1: {fileID: 0}
 --- !u!1 &6291855565257645538
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,8 +344,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.3583264, z: 1}
+  m_Center: {x: 0, y: 0.17916311, z: 0}
 --- !u!114 &2928838982566101817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +359,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
   isPressed: 0
+  src: {fileID: 82024950598525423, guid: 6484ba00b20f13b409c47b9179dfe730, type: 3}
+  sfx1: {fileID: 8300000, guid: e9e3ae1654b983b4a962954313a99f3e, type: 3}
 --- !u!1 &6463089179499106617
 GameObject:
   m_ObjectHideFlags: 0

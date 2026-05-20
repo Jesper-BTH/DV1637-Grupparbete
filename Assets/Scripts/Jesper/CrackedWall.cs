@@ -9,7 +9,7 @@ public class CrackedWall : MonoBehaviour
     public AudioClip sfx1;
 
     private bool soundPlayed = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         PointsHit = 0;
