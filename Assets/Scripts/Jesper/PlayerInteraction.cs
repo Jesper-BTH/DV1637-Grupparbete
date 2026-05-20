@@ -8,6 +8,7 @@ public class PlayerInteraction : MonoBehaviour
     public float range = 3f;
     public Inventory inventory;
     public GameObject textUi;
+    //GameObject itemCarryParent;
     private IEnumerator ShowTextForSeconds()
     {
         textUi.SetActive(true);
@@ -34,6 +35,8 @@ public class PlayerInteraction : MonoBehaviour
             else
                 TryInteract(InteractionType.Hit);
         }
+
+        //if ((Mouse.current.leftButton.wasReleasedThisFrame && itemCarryParent)
     }
     void TryInteract(InteractionType type)
     {
@@ -63,6 +66,12 @@ public class PlayerInteraction : MonoBehaviour
                 }
 
             }
+
+            /*if (hit.collider.CompareTag("Block") && hit.collider.transform.parent.CompareTag("Broken"))
+            {
+                itemCarryParent = hit.collider.transform.parent.gameObject;
+                hit.collider.transform.SetParent(gameObject.transform.GetChild(3));
+            }*/
 
             // theo
             if (hit.collider.CompareTag("Dirt"))

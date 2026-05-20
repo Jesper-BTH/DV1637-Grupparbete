@@ -23,7 +23,7 @@ public class PlayercController : MonoBehaviour
 
     void Start()
     {
-        Application.targetFrameRate = -1;
+        Application.targetFrameRate = 240;
         QualitySettings.vSyncCount = 0;
     }
     private void OnEnable()
@@ -104,13 +104,16 @@ public class PlayercController : MonoBehaviour
         //Apply gravity
         playerVelocity.y += gravityValue * Time.deltaTime; //delta.time here was not the issue -Mattis
 
+        Vector3 finalMove = move * playerSpeed;
+        characterController.Move(finalMove * Time.deltaTime);
+        characterController.Move(playerVelocity * Time.deltaTime);
         //Move
-        
+
     }
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
         Vector3 finalMove = move * playerSpeed;
         characterController.Move(finalMove * Time.fixedDeltaTime);
         characterController.Move(playerVelocity * Time.fixedDeltaTime);
-    }
+    }*/
 }

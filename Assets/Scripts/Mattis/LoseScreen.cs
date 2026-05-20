@@ -10,6 +10,8 @@ public class LoseScreen : MonoBehaviour
     public TMP_Text UsedTime;
     public TMP_Text ProgressText;
     public GameObject Timer;
+    public GameObject ProgressList;
+    public Inventory inventory;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,12 +28,29 @@ public class LoseScreen : MonoBehaviour
 
     public void Lose()
     {
+        int invSizesub = 0;
+        string listProgress;
         GameObject.Find("Player").transform.GetChild(3).GetComponent<MouseLook>().enabled = false;
         Menu.enabled = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         FadeIn = true;
         UsedTime.text = "Time played:\n" + Timer.GetComponent<Matches_Timer>().TotalMatches + " minutes";
+        listProgress = "\n" + ProgressList.GetComponent<ProgressonList>().Progress;
+        if (inventory.HasItem(ItemType.Shovel))
+        {
+            listProgress += "\n Found the Shovel";
+            invSizesub += 1;
+        }
+
+        if (inventory.HasItem(ItemType.Key))
+        {
+            listProgress += "\n Found the Key";
+            invSizesub += 1;
+        }
+
+        listProgress += "\n Found " + (inventory.items.Count - invSizesub) + " of 9 Matchboxes";
+        ProgressText.text = listProgress;
         //ProgressText.text = list of checkpoints
     }
 

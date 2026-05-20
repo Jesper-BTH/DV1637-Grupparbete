@@ -43,6 +43,7 @@ public class Coffin : MonoBehaviour
                 gameObject.transform.GetChild(i).GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-0.5f, 0.5f), 0.5f, Random.Range(-0.5f, 0.5f)), ForceMode.Impulse);
             }//Scatter pieces
             gameObject.transform.GetComponent<BoxCollider>().enabled = false;
+            gameObject.transform.tag = "Broken";
         }//breaks the object into pieces when 3 weakpoints have been hit.
 
     }

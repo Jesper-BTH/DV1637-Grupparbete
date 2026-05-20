@@ -1143,6 +1143,8 @@ MonoBehaviour:
   UsedTime: {fileID: 4972871802400283936}
   ProgressText: {fileID: 5303098550101712914}
   Timer: {fileID: 0}
+  ProgressList: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!1 &9142329280606955577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,7 +1179,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -466, y: 112}
+  m_AnchoredPosition: {x: -56, y: 150}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5411482576799080641
@@ -1274,7 +1276,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -74.96607, y: 0, z: -441.37805, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
