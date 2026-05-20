@@ -51,7 +51,11 @@ public class Door_Pressure : MonoBehaviour
                 // Play sound ONCE
                 if (!soundPlayed)
                 {
-                    src.PlayOneShot(sfx1);
+                    src.pitch = 1;
+                    src.clip = sfx1;
+                    src.time = 0;
+                    src.Play();
+
                     soundPlayed = true;
                 }
 
@@ -69,7 +73,16 @@ public class Door_Pressure : MonoBehaviour
             CloseDoor();
 
             hasShownText = false;
-            soundPlayed = false;
+
+            if (soundPlayed)
+            {
+                src.pitch = -1;
+                src.clip = sfx1;
+                src.time = sfx1.length - 0.01f;
+                src.Play();
+
+                soundPlayed = false;
+            }
         }
     }
 

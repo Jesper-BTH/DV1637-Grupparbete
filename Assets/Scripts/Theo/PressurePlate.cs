@@ -5,6 +5,10 @@ public class PressurePlate : MonoBehaviour
     public int isPressed = 0;
     private Animator animator;
 
+    public AudioSource src;
+    public AudioClip sfx1;
+
+
     private void Start()
     {
         animator = GetComponentInParent<Animator>();
@@ -16,6 +20,8 @@ public class PressurePlate : MonoBehaviour
         {
             isPressed++;
             animator.SetInteger("isPressed", isPressed);
+
+            src.PlayOneShot(sfx1);
         }
     }
 
@@ -29,6 +35,7 @@ public class PressurePlate : MonoBehaviour
                 isPressed = 0;
 
             animator.SetInteger("isPressed", isPressed);
+
         }
     }
 }
