@@ -36,20 +36,20 @@ public class LoseScreen : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         FadeIn = true;
         UsedTime.text = "Time played:\n" + Timer.GetComponent<Matches_Timer>().TotalMatches + " minutes";
-        listProgress = "\n" + ProgressList.GetComponent<ProgressonList>().Progress;
+        listProgress = " \n" + ProgressList.GetComponent<ProgressonList>().Progress;
         if (inventory.HasItem(ItemType.Shovel))
         {
-            listProgress += "\n Found the Shovel";
+            listProgress += "\nFound the Shovel.";
             invSizesub += 1;
         }
 
         if (inventory.HasItem(ItemType.Key))
         {
-            listProgress += "\n Found the Key";
+            listProgress += "\nFound the Key.";
             invSizesub += 1;
         }
 
-        listProgress += "\n Found " + (inventory.items.Count - invSizesub) + " of 9 Matchboxes";
+        listProgress += "\nFound " + (inventory.items.Count - invSizesub) + " of 9 Matchboxes.";
         ProgressText.text = listProgress;
         //ProgressText.text = list of checkpoints
     }

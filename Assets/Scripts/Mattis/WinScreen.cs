@@ -27,21 +27,21 @@ public class WinScreen : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         UsedTime.text = "Time played:\n" + ((Timer.GetComponent<Matches_Timer>().TotalMatches*60) - (int)Timer.GetComponent<Matches_Timer>().timer)/60 + " minutes\n" + ((Timer.GetComponent<Matches_Timer>().TotalMatches * 60) - (int)Timer.GetComponent<Matches_Timer>().timer) % 60 + " seconds";
         Time.timeScale = 0;
-        listProgress = "\n" + ProgressList.GetComponent<ProgressonList>().Progress;
+        listProgress = " \n" + ProgressList.GetComponent<ProgressonList>().Progress;
         if (inventory.HasItem(ItemType.Shovel))
         {
-            listProgress += "\n Found the Shovel";
+            listProgress += "\nFound the Shovel.";
             invSizesub += 1;
         }
 
         if (inventory.HasItem(ItemType.Key))
         {
-            listProgress += "\n Found the Key";
+            listProgress += "\nFound the Key.";
             invSizesub += 1;
         }
 
-        listProgress += "\n Found " + (inventory.items.Count - invSizesub) + " of 9 Matchboxes";
-        listProgress += "\n Escaped the Graveyard";
+        listProgress += "\nFound " + (inventory.items.Count - invSizesub) + " of 9 Matchboxes.";
+        listProgress += "\nEscaped the Graveyard.";
         ProgressText.text = listProgress;
     }
 

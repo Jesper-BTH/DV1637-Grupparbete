@@ -13,7 +13,7 @@ public class Door_Pressure : MonoBehaviour
 
     private bool hasShownText = false;
 
-    public GameObject textUi;
+    //public GameObject textUi;
 
     // Audio Jesper
     public AudioSource src;
@@ -29,14 +29,14 @@ public class Door_Pressure : MonoBehaviour
         openPos = closedPos + openOffset;
     }
 
-    private IEnumerator ShowTextForSeconds()
-    {
-        textUi.SetActive(true);
+    //private IEnumerator ShowTextForSeconds()
+    //{
+    //    textUi.SetActive(true);
 
-        yield return new WaitForSeconds(2f);
+    //    yield return new WaitForSeconds(2f);
 
-        textUi.SetActive(false);
-    }
+    //    textUi.SetActive(false);
+    //}
 
     void Update()
     {
@@ -61,7 +61,7 @@ public class Door_Pressure : MonoBehaviour
 
                 if (!hasShownText)
                 {
-                    StartCoroutine(ShowTextForSeconds());
+                    //StartCoroutine(ShowTextForSeconds());
                     hasShownText = true;
                 }
             }

@@ -1,4 +1,4 @@
-Library: D:\Unity\DV1637-Grupparbete\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+Library: K:\Unity\DV1637-Grupparbete\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --platform=Windows
 --minimum-os-version=
 --backend=burst-llvm-19
@@ -10,10 +10,10 @@ Library: D:\Unity\DV1637-Grupparbete\Temp\BurstOutput\Data\Plugins\x86_64\lib_bu
 --target-framework=NetFramework
 --linker-options=PdbAltPath="Premature Burial_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=D:\Unity\DV1637-Grupparbete\Temp\Burst
---key-folder=C:/Program Files/Unity 6000.3.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=D:\Unity\DV1637-Grupparbete\Library\Burst
---output=D:\Unity\DV1637-Grupparbete\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--temp-folder=K:\Unity\DV1637-Grupparbete\Temp\Burst
+--key-folder=C:/Program Files/Unity/Hub/Editor/6000.3.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
+--decode-folder=K:\Unity\DV1637-Grupparbete\Library\Burst
+--output=K:\Unity\DV1637-Grupparbete\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
@@ -108,10 +108,10 @@ Library: D:\Unity\DV1637-Grupparbete\Temp\BurstOutput\Data\Plugins\x86_64\lib_bu
 --target-framework=NetFramework
 --linker-options=PdbAltPath="Premature Burial_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=D:\Unity\DV1637-Grupparbete\Temp\Burst
---key-folder=C:/Program Files/Unity 6000.3.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=D:\Unity\DV1637-Grupparbete\Library\Burst
---output=D:\Unity\DV1637-Grupparbete\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--temp-folder=K:\Unity\DV1637-Grupparbete\Temp\Burst
+--key-folder=C:/Program Files/Unity/Hub/Editor/6000.3.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
+--decode-folder=K:\Unity\DV1637-Grupparbete\Library\Burst
+--output=K:\Unity\DV1637-Grupparbete\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
