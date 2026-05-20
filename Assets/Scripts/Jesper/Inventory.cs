@@ -13,7 +13,8 @@ public enum ItemType
 
 public class Inventory : MonoBehaviour
 {
-    public List<ItemType> items = new List<ItemType>();
+    public List<ItemType> items =
+        new List<ItemType>();
 
     public event Action OnInventoryChanged;
 
@@ -28,5 +29,16 @@ public class Inventory : MonoBehaviour
     public bool HasItem(ItemType item)
     {
         return items.Contains(item);
+    }
+
+    public void RemoveItem(ItemType item)
+    {
+        items.Remove(item);
+        OnInventoryChanged?.Invoke();
+    }
+
+    public void RefreshUI()
+    {
+        OnInventoryChanged?.Invoke();
     }
 }

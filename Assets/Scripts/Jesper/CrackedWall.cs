@@ -5,6 +5,10 @@ using UnityEngine.UIElements;
 public class CrackedWall : MonoBehaviour
 {
     int PointsHit;
+    public AudioSource src;
+    public AudioClip sfx1;
+
+    private bool soundPlayed = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,6 +44,12 @@ public class CrackedWall : MonoBehaviour
                 gameObject.transform.GetChild(i).GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-0.5f, 0.5f), 0.5f, Random.Range(-0.5f, 0.5f)), ForceMode.Impulse);
             }//Scatter pieces
             gameObject.transform.GetComponent<BoxCollider>().enabled = false;
+            // Play sound ONCE
+            if (!soundPlayed)
+            {
+                src.PlayOneShot(sfx1);
+                soundPlayed = true;
+            }
             Destroy(gameObject, 2f);
         }//breaks the object into pieces when 3 weakpoints have been hit.
 

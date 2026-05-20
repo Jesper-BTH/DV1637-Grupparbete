@@ -19,6 +19,8 @@ public class PlayercController : MonoBehaviour
     public InputActionReference moveAction;
     public InputActionReference jumpAction;
 
+    Vector3 move;
+
     void Start()
     {
         Application.targetFrameRate = -1;
@@ -74,7 +76,7 @@ public class PlayercController : MonoBehaviour
 
         // Read input
         Vector2 input = moveAction.action.ReadValue<Vector2>();
-        Vector3 move = transform.right * input.x + transform.forward * input.y;
+        move = transform.right * input.x + transform.forward * input.y;
         move = Vector3.ClampMagnitude(move, 1f);
 
         if(isClimbing == true)
@@ -103,7 +105,12 @@ public class PlayercController : MonoBehaviour
         playerVelocity.y += gravityValue * Time.deltaTime; //delta.time here was not the issue -Mattis
 
         //Move
-        Vector3 finalMove = move * playerSpeed + Vector3.up * playerVelocity.y;
-        characterController.Move(finalMove * Time.deltaTime);
+        
+    }
+    private void FixedUpdate()
+    {
+        Vector3 finalMove = move * playerSpeed;
+        characterController.Move(finalMove * Time.fixedDeltaTime);
+        characterController.Move(playerVelocity * Time.fixedDeltaTime);
     }
 }
