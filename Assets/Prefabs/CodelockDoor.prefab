@@ -127,3 +127,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CodeLockDoor
   openOffset: {x: 0, y: 4, z: 0}
   speed: 2
+  src: {fileID: 0}
+  sfx1: {fileID: 8300000, guid: 2da7bedd43cdcaf499a9e78768b9555d, type: 3}

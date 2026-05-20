@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3504546262790066560}
   - component: {fileID: 7764742541612914752}
   m_Layer: 0
-  m_Name: KeyDoor
+  m_Name: Keydoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyDoor
   Key: 0
+  src: {fileID: 82024950598525423, guid: 6484ba00b20f13b409c47b9179dfe730, type: 3}
+  sfx1: {fileID: 8300000, guid: 48fb82e79712e114a8f56026364dd6ac, type: 3}
 --- !u!95 &7764742541612914752
 Animator:
   serializedVersion: 7

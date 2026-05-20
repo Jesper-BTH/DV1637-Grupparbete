@@ -10,6 +10,11 @@ public class Matches_Timer : MonoBehaviour
     public RawImage fire;
     bool isOver;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    // Audio Jesper
+    public AudioSource src;
+    public AudioClip matchLightSfx;
+
     void Start()
     {
         isOver = false;
@@ -45,6 +50,7 @@ public class Matches_Timer : MonoBehaviour
             matches--;
             if (timer > 2)
             {
+                src.PlayOneShot(matchLightSfx);
                 gameObject.transform.parent.GetChild(0).transform.GetComponent<Light>().intensity = 2; // new match gives light
             }
         }

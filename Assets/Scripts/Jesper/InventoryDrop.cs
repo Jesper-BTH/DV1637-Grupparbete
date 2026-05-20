@@ -33,6 +33,7 @@ public class InventoryDrop : MonoBehaviour
             return;
         }
 
+        // Senaste item i inventory
         ItemType item =
             inventory.items[inventory.items.Count - 1];
 
@@ -45,16 +46,69 @@ public class InventoryDrop : MonoBehaviour
             return;
         }
 
-        Vector3 dropPosition =
-            playerCamera.transform.position +
-            playerCamera.transform.forward * 2f;
+        Vector3 dropPosition;
 
-        Instantiate(
-            prefab,
-            dropPosition,
-            Quaternion.identity
+        Ray ray = new Ray(
+            playerCamera.transform.position,
+            playerCamera.transform.forward
         );
 
+        // Placera på ytan spelaren tittar på
+        if (Physics.Raycast(
+            ray,
+            out RaycastHit hit,
+            3f))
+        {
+            dropPosition =
+                hit.point +
+                hit.normal * 0.3f;
+        }
+        else
+        {
+            // fallback
+            dropPosition =
+                playerCamera.transform.position +
+                playerCamera.transform.forward * 2f;
+        }
+
+        GameObject droppedObject =
+            Instantiate(
+                prefab,
+                dropPosition,
+                Quaternion.identity
+            );
+
+        // Lägg till Rigidbody om den saknas
+        Rigidbody rb =
+            droppedObject.GetComponent<Rigidbody>();
+
+        if (rb == null)
+        {
+            rb =
+                droppedObject.AddComponent<Rigidbody>();
+        }
+
+        rb.useGravity = true;
+        rb.isKinematic = false;
+
+        // Ignorera spelarens collider
+        Collider playerCollider =
+            GetComponent<Collider>();
+
+        Collider itemCollider =
+            droppedObject.GetComponent<Collider>();
+
+        if (playerCollider != null &&
+            itemCollider != null)
+        {
+            Physics.IgnoreCollision(
+                playerCollider,
+                itemCollider,
+                true
+            );
+        }
+
+        // Ta bort från inventory
         inventory.RemoveItem(item);
 
         Debug.Log("Dropped: " + item);

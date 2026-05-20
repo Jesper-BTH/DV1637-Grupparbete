@@ -9,6 +9,11 @@ public class CodeLockDoor : MonoBehaviour
     private Vector3 openPos;
     private bool open;
 
+    // Audio Jesper
+    public AudioSource src;
+    public AudioClip sfx1;
+    private bool soundPlayed = false;
+
     private void Start()
     {
         closedPos = transform.position;
@@ -18,10 +23,30 @@ public class CodeLockDoor : MonoBehaviour
     public void Open()
     {
         open = true;
+
+        if (!soundPlayed)
+        {
+            src.pitch = 1;
+            src.clip = sfx1;
+            src.time = 0;
+            src.Play();
+
+            soundPlayed = true;
+        }
     }
     public void Close()
     {
         open = false;
+
+        if (soundPlayed)
+        {
+            src.pitch = -1;
+            src.clip = sfx1;
+            src.time = sfx1.length - 0.01f;
+            src.Play();
+
+            soundPlayed = false;
+        }
     }
 
     private void Update()

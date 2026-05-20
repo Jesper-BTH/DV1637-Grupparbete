@@ -12,13 +12,13 @@ public class Door_Pressure : MonoBehaviour
     private float timer = 0f;
 
     private bool hasShownText = false;
-    private bool soundPlayed = false;
 
     public GameObject textUi;
 
-    // Audio
+    // Audio Jesper
     public AudioSource src;
     public AudioClip sfx1;
+    private bool soundPlayed = false;
 
     private Vector3 closedPos;
     private Vector3 openPos;

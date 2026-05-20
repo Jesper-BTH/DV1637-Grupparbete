@@ -5,6 +5,7 @@ public class PressurePlate : MonoBehaviour
     public int isPressed = 0;
     private Animator animator;
 
+    // Audio Jesper
     public AudioSource src;
     public AudioClip sfx1;
 

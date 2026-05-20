@@ -9,6 +9,13 @@ public class PlayerInteraction : MonoBehaviour
     public Inventory inventory;
     public GameObject textUi;
     //GameObject itemCarryParent;
+
+    public AudioSource src;
+    public AudioClip sfx1;
+    public AudioClip sfx2;
+    public AudioClip sfx3;
+
+
     private IEnumerator ShowTextForSeconds()
     {
         textUi.SetActive(true);
@@ -55,6 +62,7 @@ public class PlayerInteraction : MonoBehaviour
                 if (coffin != null)
                 {
                     coffin.WeakPointHit(hit.collider);
+                    src.PlayOneShot(sfx1);
                     return;
                 }
 
@@ -65,6 +73,14 @@ public class PlayerInteraction : MonoBehaviour
                     return;
                 }
 
+            }
+
+            Coffin coffinWood = hit.collider.GetComponentInParent<Coffin>();
+
+            if (coffinWood != null)
+            {
+                src.PlayOneShot(sfx2);
+                return;
             }
 
             /*if (hit.collider.CompareTag("Block") && hit.collider.transform.parent.CompareTag("Broken"))
@@ -79,6 +95,7 @@ public class PlayerInteraction : MonoBehaviour
                 if (inventory.HasItem(ItemType.Shovel))
                 {
                     Destroy(hit.collider.gameObject);
+                    src.PlayOneShot(sfx3);
                     return;
                 }
                 else
