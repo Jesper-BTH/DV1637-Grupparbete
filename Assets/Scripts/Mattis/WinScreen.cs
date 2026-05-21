@@ -25,7 +25,7 @@ public class WinScreen : MonoBehaviour
         Menu.enabled = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
-        UsedTime.text = "Time played:\n" + ((Timer.GetComponent<Matches_Timer>().TotalMatches*60) - (int)Timer.GetComponent<Matches_Timer>().timer)/60 + " minutes\n" + ((Timer.GetComponent<Matches_Timer>().TotalMatches * 60) - (int)Timer.GetComponent<Matches_Timer>().timer) % 60 + " seconds";
+        UsedTime.text = "Time played:\n" + ((Timer.GetComponent<Matches_Timer>().TotalMatches*60) - (int)Timer.GetComponent<Matches_Timer>().timer)/60 + " minutes\n" + ((Timer.GetComponent<Matches_Timer>().TotalMatches * 60) - (int)Timer.GetComponent<Matches_Timer>().timer) % 60 + " seconds";//writes out playtime
         Time.timeScale = 0;
         listProgress = " \n" + ProgressList.GetComponent<ProgressonList>().Progress;
         if (inventory.HasItem(ItemType.Shovel))
@@ -38,9 +38,9 @@ public class WinScreen : MonoBehaviour
         {
             listProgress += "\nFound the Key.";
             invSizesub += 1;
-        }
+        }// adds shovel/key to progresslist
 
-        listProgress += "\nFound " + (inventory.items.Count - invSizesub) + " of 9 Matchboxes.";
+        listProgress += "\nFound " + (inventory.items.Count - invSizesub) + " of 9 Matchboxes.";//adds matches to progresslist
         listProgress += "\nEscaped the Graveyard.";
         ProgressText.text = listProgress;
     }
@@ -61,7 +61,7 @@ public class WinScreen : MonoBehaviour
     public void BackToMenu()
     {
         //GameObject.Find("Player").transform.GetChild(3).GetComponent<MouseLook>().enabled = true;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0);//loads mainmenu
     }
 
     public void Quit()

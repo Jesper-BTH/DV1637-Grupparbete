@@ -10,7 +10,7 @@ public class MatchBox : MonoBehaviour
         match = gameObject.transform.GetChild(0).gameObject;
         for (int i = 1; i < Amount; i++)
         {
-            Instantiate(match, new Vector3(match.transform.position.x + (0.02f*i), match.transform.position.y, match.transform.position.z), Quaternion.identity, gameObject.transform);
+            Instantiate(match, new Vector3(match.transform.position.x + (0.02f*i), match.transform.position.y, match.transform.position.z), Quaternion.identity, gameObject.transform);//add additional matches to the box
         }
     }
 

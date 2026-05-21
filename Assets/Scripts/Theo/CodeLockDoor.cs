@@ -12,6 +12,7 @@ public class CodeLockDoor : MonoBehaviour
     // Audio Jesper
     public AudioSource src;
     public AudioClip sfx1;
+    public AudioClip sfx2;
     private bool soundPlayed = false;
 
     private void Start()
@@ -40,9 +41,9 @@ public class CodeLockDoor : MonoBehaviour
 
         if (soundPlayed)
         {
-            src.pitch = -1;
-            src.clip = sfx1;
-            src.time = sfx1.length - 0.01f;
+            src.pitch = 1;
+            src.clip = sfx2;
+            src.time = sfx2.length;
             src.Play();
 
             soundPlayed = false;

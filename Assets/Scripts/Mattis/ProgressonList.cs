@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ProgressonList : MonoBehaviour
 {
-    public string Progress;
+    public string Progress;// lists progress
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

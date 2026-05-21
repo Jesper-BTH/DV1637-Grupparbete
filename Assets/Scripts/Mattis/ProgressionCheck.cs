@@ -15,7 +15,7 @@ public class ProgressionCheck : MonoBehaviour
         if (!havetriggered && other.CompareTag("Player"))
         {
             havetriggered=true;
-            gameObject.GetComponentInParent<ProgressonList>().Progress += "\n" + Name;
+            gameObject.GetComponentInParent<ProgressonList>().Progress += "\n" + Name;//adds collider to progress list
         }
     }
     // Update is called once per frame

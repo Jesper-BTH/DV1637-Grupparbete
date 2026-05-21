@@ -18,6 +18,7 @@ public class Door_Pressure : MonoBehaviour
     // Audio Jesper
     public AudioSource src;
     public AudioClip sfx1;
+    public AudioClip sfx2;
     private bool soundPlayed = false;
 
     private Vector3 closedPos;
@@ -76,9 +77,9 @@ public class Door_Pressure : MonoBehaviour
 
             if (soundPlayed)
             {
-                src.pitch = -1;
-                src.clip = sfx1;
-                src.time = sfx1.length - 0.01f;
+                src.pitch = 1;
+                src.clip = sfx2;
+                src.time = sfx2.length;
                 src.Play();
 
                 soundPlayed = false;
@@ -90,7 +91,7 @@ public class Door_Pressure : MonoBehaviour
     {
         foreach (PressurePlate plate in plates)
         {
-            if (plate.isPressed != 1)
+            if (plate.isPressed <= 0)
             {
                 return false;
             }

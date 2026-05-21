@@ -35,7 +35,7 @@ public class LoseScreen : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         FadeIn = true;
-        UsedTime.text = "Time played:\n" + Timer.GetComponent<Matches_Timer>().TotalMatches + " minutes";
+        UsedTime.text = "Time played:\n" + Timer.GetComponent<Matches_Timer>().TotalMatches + " minutes";//writes out playtime
         listProgress = " \n" + ProgressList.GetComponent<ProgressonList>().Progress;
         if (inventory.HasItem(ItemType.Shovel))
         {
@@ -47,9 +47,9 @@ public class LoseScreen : MonoBehaviour
         {
             listProgress += "\nFound the Key.";
             invSizesub += 1;
-        }
+        }// adds shovel/key to progresslist
 
-        listProgress += "\nFound " + (inventory.items.Count - invSizesub) + " of 9 Matchboxes.";
+        listProgress += "\nFound " + (inventory.items.Count - invSizesub) + " of 9 Matchboxes.";//adds matches to progresslist
         ProgressText.text = listProgress;
         //ProgressText.text = list of checkpoints
     }

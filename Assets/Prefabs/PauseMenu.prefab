@@ -2499,17 +2499,21 @@ MonoBehaviour:
 
     Walk - W,A,S,D
 
+    Sprint - Shift
+
     Jump - Spacebar
 
-    Punch -
-    Left-MouseButton
+    Punch
+    - Left-MouseButton
 
     Interact - E
 
     Push - Walk into the object
 
     Pause
-    - Esc'
+    - Esc
+
+    Drop item(Don''t) - Q'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 76fba0ac5048b134c80c9c7b5f862a1b, type: 2}
   m_sharedMaterial: {fileID: -1986963034542705606, guid: 76fba0ac5048b134c80c9c7b5f862a1b, type: 2}

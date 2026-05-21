@@ -22,6 +22,6 @@ public class PauseMenuHandler : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
             Time.timeScale = 0;
             gameObject.transform.GetChild(0).GetComponent<PauseMenu>().Menu.enabled = true;
-        }
+        }//pauses the game and opens the pausemenu
     }
 }

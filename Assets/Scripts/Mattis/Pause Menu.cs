@@ -23,9 +23,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         Menu.enabled = false;
         Setting.enabled = false;
-
-
-    }
+    }//resumes game
     public void Restart()
     {
         GameObject.Find("Player").transform.GetChild(3).GetComponent<MouseLook>().enabled = true;
@@ -46,7 +44,7 @@ public class PauseMenu : MonoBehaviour
             .transform.GetChild(3)
             .GetComponent<MouseLook>()
             .enabled = false;
-    }
+    }// -Theo
 
     public void Back()
     {
@@ -56,7 +54,7 @@ public class PauseMenu : MonoBehaviour
     public void BackToMenu()
     {
         //GameObject.Find("Player").transform.GetChild(3).GetComponent<MouseLook>().enabled = true;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0);//loads mainmenu
     }
 
     public void Quit()

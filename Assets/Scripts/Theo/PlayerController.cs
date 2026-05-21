@@ -114,6 +114,6 @@ public class PlayercController : MonoBehaviour
     {
         Vector3 finalMove = move * playerSpeed;
         characterController.Move(finalMove * Time.fixedDeltaTime);
-        characterController.Move(playerVelocity * Time.fixedDeltaTime);
+        characterController.Move(playerVelocity * Time.fixedDeltaTime); //needed for +1000 framerate -Mattis
     }*/
 }

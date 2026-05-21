@@ -431,7 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 667ca335ddcd9a046825af5f6c3da7d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProgressonList
-  Progress: 'Progress done:'
+  Progress: 'Progress done: \n'
 --- !u!1 &6004609424086493676
 GameObject:
   m_ObjectHideFlags: 0
