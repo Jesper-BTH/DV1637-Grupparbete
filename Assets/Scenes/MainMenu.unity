@@ -1163,7 +1163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2081350275
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1180,7 +1180,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 462, y: 389}
+  m_AnchoredPosition: {x: 462, y: -66}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2081350276
@@ -1207,20 +1207,24 @@ MonoBehaviour:
 
     Walk - W,A,S,D
 
+    Sprint - Shift
+
     Jump - Spacebar
 
-    Punch -
-    Left-MouseButton
+    Punch
+    - Left-MouseButton
 
     Interact - E
 
     Push - Walk into the object
 
     Pause
-    - Esc'
+    - Esc
+
+    Drop item(Don''t) - Q'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 76fba0ac5048b134c80c9c7b5f862a1b, type: 2}
+  m_sharedMaterial: {fileID: -1986963034542705606, guid: 76fba0ac5048b134c80c9c7b5f862a1b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1283,7 +1287,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -320.41513, w: -221.75545}
+  m_margin: {x: 0, y: 0, z: -320.41513, w: -291.75024}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
